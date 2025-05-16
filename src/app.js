@@ -16,9 +16,10 @@ app.use(cookieParser());
 
 
 import ownersRouter from './routes/owner.Router.js'
+import usersRouter from './routes/user.Router.js'
 
 app.use("/owners",ownersRouter);
-// app.use("/users",usersRouter);
+app.use("/users",usersRouter);
 // app.use("/products",productsRouter)
 
 
