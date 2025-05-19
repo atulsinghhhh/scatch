@@ -17,11 +17,11 @@ app.use(cookieParser());
 
 import ownersRouter from './routes/owner.Router.js'
 import usersRouter from './routes/user.Router.js'
-import productsRouter from './routes/product.Router.js'
+// import productsRouter from './routes/product.Router.js'
 
 app.use("/owners",ownersRouter);
 app.use("/users",usersRouter);
-app.use("/products",productsRouter)
+// app.use("/products",productsRouter)
 
 
 

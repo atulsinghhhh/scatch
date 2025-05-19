@@ -17,20 +17,28 @@ const ownerSchema = new mongoose.Schema({
     },
     contact: {
         type: Number,
-        // required: true
     },
     picture: {
         type: String,
-        // required: true
     },
-    Cart: {
-        type: Array,
-        default: []
-    },
-    products: {
-        type: Array,
-        default: []
-    },
+    Cart: [
+        {
+            productId: { 
+                type: mongoose.Schema.Types.ObjectId, 
+                ref: 'Product' 
+            },
+            quantity: { 
+                type: Number, 
+                default: 1 
+            }
+        }
+    ],
+    products: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product'
+        }
+    ],
     gstin: {
         type: String,
     }

@@ -47,4 +47,10 @@ const addProduct = asyncHandler(async (req, res) => {
     );
 });
 
-export { addProduct };
+const deleteProduct=asyncHandler(async(req,res)=>{
+    
+})
+
+export { addProduct,
+    deleteProduct
+};
