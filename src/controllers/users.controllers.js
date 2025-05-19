@@ -32,6 +32,7 @@ const userRegister=asyncHandler(async(req,res)=>{
         )
     )
 })
+
 const generateAccessAndRefreshTokens = async (userId) => {
     try {
         const user = await User.findById(userId);

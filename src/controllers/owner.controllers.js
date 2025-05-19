@@ -35,6 +35,9 @@ const createOwner = asyncHandler(async (req, res) => {
     );
 });
 
+
+
+
 export{
     createOwner
 }

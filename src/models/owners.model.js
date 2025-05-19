@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
 
 const ownerSchema = new mongoose.Schema({
     fullname: {
@@ -34,5 +35,13 @@ const ownerSchema = new mongoose.Schema({
         type: String,
     }
 }, { timestamps: true });
+
+ownerSchema.pre("save",async function(next){  
+    if(this.isModified("password")){
+        this.password=await bcrypt.hash(this.password,10);
+    }
+    next();
+
+})
 
 export const Owner = mongoose.model("Owner", ownerSchema);
